@@ -1,11 +1,3 @@
-# Accessing ifconfig.com for accessing my ip address
-data "http" "my_public_ip" {
-  url = "https://ipv4.icanhazip.com/json"
-  request_headers = {
-    Accept = "application/json"
-  }
-}
-
 
 # Creating security group for http and ssh access and all outbound access
 resource "aws_security_group" "allow_http_and_ssh" {

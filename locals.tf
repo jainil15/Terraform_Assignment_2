@@ -1,3 +1,12 @@
+# Accessing ipv4.icanhazip/json for accessing my ip address
+data "http" "my_public_ip" {
+  url = "https://ipv4.icanhazip.com/json"
+  request_headers = {
+    Accept = "application/json"
+  }
+}
+
+
 # Local Variables
 locals {
   server_name = "Jainils_Server"
