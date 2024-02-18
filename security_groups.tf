@@ -28,7 +28,7 @@ resource "aws_security_group" "public" {
 }
 
 resource "aws_security_group" "private" {
-  name        = "allow_http_and_ssh"
+  name        = "${var.env}-private-sg"
   description = "Only ssh for now"
   vpc_id      = aws_vpc.app_vpc.id
 
