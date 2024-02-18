@@ -1,8 +1,11 @@
 # OUTPUTS:
-output "instance_ip_address" {
+output "public_instance_ip_address" {
   value = aws_instance.public[*].public_ip
 }
 
+output "private_instance_ip_address" {
+  value = aws_instance.private[*].public_ip
+}
 output "my_ip" {
   value = local.my_public_ip
 }

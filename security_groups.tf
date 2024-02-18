@@ -31,13 +31,6 @@ resource "aws_security_group" "private" {
   name        = "${var.env}-private-sg"
   description = "Only ssh for now"
   vpc_id      = aws_vpc.app_vpc.id
-
-  ingress {
-    cidr_blocks = ["${local.my_public_ip}/32"] # Only MY IP Access
-    protocol    = "tcp"
-    from_port   = 22
-    to_port     = 22
-  }
   egress {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
