@@ -1,9 +1,9 @@
 # Creating aws ec2 instance with web server
 resource "aws_instance" "app_server" {
-  ami                         = "ami-06b72b3b2a773be2b"
+  ami                         = var.ami_id
   key_name                    = aws_key_pair.mykeypair.key_name
-  instance_type               = "t2.micro"
-  subnet_id                   = aws_subnet.public_ap_south_1a.id
+  instance_type               = var.instance_type
+  subnet_id                   = aws_subnet.public[0].id
   vpc_security_group_ids      = [aws_security_group.allow_http_and_ssh.id]
   associate_public_ip_address = true
   tags = {
