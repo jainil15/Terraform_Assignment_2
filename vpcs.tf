@@ -3,7 +3,7 @@ resource "aws_vpc" "app_vpc" {
   cidr_block       = var.vpc_cidr_block
   instance_tenancy = "default"
   tags = {
-    Name = "${local.vpc_name}"
+    Name = "${var.env}-vpc"
   }
 }
 
@@ -11,7 +11,7 @@ resource "aws_vpc" "app_vpc" {
 resource "aws_internet_gateway" "app_igw" {
   vpc_id = aws_vpc.app_vpc.id
   tags = {
-    Name = "Jainils_IGW"
+    Name = "${var.env}-igw"
   }
 }
 
