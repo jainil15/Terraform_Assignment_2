@@ -1,4 +1,5 @@
 
+# Creating private subnet
 resource "aws_subnet" "private" {
   count             = length(var.private_subnet_cidr_blocks)
   vpc_id            = aws_vpc.app_vpc.id
@@ -11,7 +12,7 @@ resource "aws_subnet" "private" {
 
 }
 
-
+# Creating public subnet
 resource "aws_subnet" "public" {
   count             = length(var.public_subnet_cidr_blocks)
   vpc_id            = aws_vpc.app_vpc.id

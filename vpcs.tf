@@ -14,5 +14,3 @@ resource "aws_internet_gateway" "app_igw" {
     Name = "${var.env}-igw"
   }
 }
-
-# Creating route table

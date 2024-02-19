@@ -22,7 +22,7 @@ systemctl restart httpd
   EOF
 }
 
-# Creating private aws ec2 instance with web server
+# Creating private aws ec2 instance for what purpose?? Talking to RDS??
 resource "aws_instance" "private" {
   count                       = length(var.private_subnet_cidr_blocks)
   ami                         = var.ami_id
