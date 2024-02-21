@@ -33,6 +33,9 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-#Ignore private key
+# Ignore Private and Public key
 *.pem
 *.pub
+
+# Ignore old files
+*.old
