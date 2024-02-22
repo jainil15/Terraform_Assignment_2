@@ -1,13 +1,14 @@
 # Assignment 2
 
-# Assignment 1
-
 ## Prerequisites:
 ### IAM USER:
 1. Create IAM user (terraform-create-user) with access to s3, ec2 and vpc full access.
 2. Generate access key for that IAM user (terraform-create-user)
 3. Configure aws cli with the access key and secret access key of the user (terraform-create-user)
    ![iam_user_terraform_create_user.png](./images/iam_user_terraform_create_user.png)
+
+### Generate Key in the Environment Directory:
+1. Use `ssh-keygen -b 2048 -t rsa -f mykeypair.pem`
 
 ## Requirements
 | Name      | Version |
