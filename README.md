@@ -202,3 +202,6 @@ In my configuration, In instances module, Both aws_instance.public and aws_insta
 ![aws_s3_created.png](./images/aws_s3_created.png)
 ![aws_vpc_created.png](./images/aws_vpc_created.png)
 ![aws_ec2_created.png](./images/aws_ec2_created.png)
+
+   **backend:**
+![aws_s3_backend_state](./images/aws_s3_backend_state.png)
