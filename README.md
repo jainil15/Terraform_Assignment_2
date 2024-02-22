@@ -182,12 +182,12 @@ In this task I am create VPC and then creating multiple subnets, creating s3 buc
 
 ## Resource Dependency:
 ### Implicit Dependencies:
-Terraform infers dependencies between resources based on the configuration given, so that resources are created and destroyed in the correct order.
-In my configuration, the module "instances" depends on resources created by the module "vpc" and module "s3". Terraform infers this dependency based on the fact that module "instances" references outputs from these modules (module.vpc.private_subnet_ids, module.vpc.public_subnet_ids, module.vpc.vpc_id, module.s3.s3_id). Therefore, whenever Terraform needs to create or update resources in module "instances", it will ensure that resources in module "vpc" and module "s3" are created or updated first.
+- Terraform infers dependencies between resources based on the configuration given, so that resources are created and destroyed in the correct order.
+- In my configuration, the module "instances" depends on resources created by the module "vpc" and module "s3". Terraform infers this dependency based on the fact that module "instances" references outputs from these modules (module.vpc.private_subnet_ids, module.vpc.public_subnet_ids, module.vpc.vpc_id, module.s3.s3_id). Therefore, whenever Terraform needs to create or update resources in module "instances", it will ensure that resources in module "vpc" and module "s3" are created or updated first.
 
 ### Explicit Dependencies:
-However, sometimes Terraform cannot infer dependencies between different parts of your infrastructure, and you will need to create an explicit dependency with the `depends_on` argument.
-In my configuration, In instances module, Both aws_instance.public and aws_instance.private resources have an explicit dependency on the S3 bucket specified by var.s3_id. This means that Terraform will ensure that the S3 bucket is created or updated before attempting to create or update the EC2 instances. This dependency is declared using the `depends_on` attribute as follows:
+- However, sometimes Terraform cannot infer dependencies between different parts of your infrastructure, and you will need to create an explicit dependency with the `depends_on` argument.
+- In my configuration, In instances module, Both aws_instance.public and aws_instance.private resources have an explicit dependency on the S3 bucket specified by var.s3_id. This means that Terraform will ensure that the S3 bucket is created or updated before attempting to create or update the EC2 instances. This dependency is declared using the `depends_on` attribute as follows:
 
 
 ## **Terraform steps:**
