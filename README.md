@@ -1,7 +1,7 @@
 # Assignment 2
 ### Objective: Create a Terraform configuration that uses variables and demonstrates the dependency between two services.
 
-#### Introduction:
+### Introduction:
 In this task I am create VPC and then creating multiple subnets, creating s3 bucket and lauching ec2 instace in private and public subnets, ec2 instance is dependent on s3 bucket.
 
 ## Prerequisites:
